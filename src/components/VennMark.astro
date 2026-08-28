@@ -24,10 +24,15 @@ const { size = 22, spin = false } = Astro.props;
     vertical-align: -4px;
     mix-blend-mode: multiply;
   }
-  .venn-mark.spin {
-    transition: transform 0.6s ease;
-  }
   .venn-mark.spin:hover {
-    transform: rotate(120deg);
+    animation: venn-spin 1.6s linear infinite;
+  }
+  @keyframes venn-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 </style>
