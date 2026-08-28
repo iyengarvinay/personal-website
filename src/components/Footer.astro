@@ -1,0 +1,42 @@
+---
+const year = new Date().getFullYear();
+const links = [
+  { href: 'https://www.linkedin.com/in/vinayiyengar', label: 'LinkedIn' },
+  { href: 'http://twitter.com/viniyengar', label: 'Twitter' },
+  { href: 'mailto:vinaysiyengar@gmail.com', label: 'Email' },
+  { href: '/rss.xml', label: 'RSS' },
+];
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <hr class="hr" />
+    <div class="footer-row">
+      <p>&copy; {year} The Vin Diagram</p>
+      <ul>
+        {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-row ul {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .footer-row a { text-decoration: none; color: var(--muted); }
+  .footer-row a:hover { color: var(--accent); }
+</style>

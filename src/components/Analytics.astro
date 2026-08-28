@@ -1,0 +1,9 @@
+---
+// Swap in your own domain once you register it with Plausible (plausible.io)
+// or Fathom. Only loads in production so local/dev traffic isn't tracked.
+const domain = 'vinayiyengar.com';
+const isProd = import.meta.env.PROD;
+---
+{isProd && (
+  <script defer data-domain={domain} src="https://plausible.io/js/script.js"></script>
+)}

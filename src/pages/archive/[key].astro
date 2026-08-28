@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  const keys = new Map<string, typeof posts>();
+  for (const p of posts) {
+    const key = `${p.data.date.getFullYear()}-${String(p.data.date.getMonth() + 1).padStart(2, '0')}`;
+    if (!keys.has(key)) keys.set(key, []);
+    keys.get(key)!.push(p);
+  }
+  return [...keys.entries()].map(([key, posts]) => ({
+    params: { key },
+    props: { posts: posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()) },
+  }));
+}
+
+const { key } = Astro.params;
+const { posts } = Astro.props;
+const [y, m] = (key ?? '').split('-');
+const label = new Date(Number(y), Number(m) - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+---
+<BaseLayout title={label} description={`Essays from ${label}`}>
+  <div class="layout">
+    <div class="posts">
+      <p class="eyebrow" style="margin: 2rem 0 0.5rem;">Archive</p>
+      <h1>{label}</h1>
+      {posts.map((post: any) => (
+        <PostCard
+          title={post.data.title}
+          date={post.data.date}
+          categories={post.data.categories}
+          description={post.data.description}
+          href={`/posts/${post.id}/`}
+        />
+      ))}
+    </div>
+    <Sidebar />
+  </div>
+</BaseLayout>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 3rem;
+    padding-bottom: 3rem;
+  }
+  @media (max-width: 760px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+</style>

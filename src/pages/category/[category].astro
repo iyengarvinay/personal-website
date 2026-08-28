@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  const categories = new Set<string>();
+  posts.forEach((p) => p.data.categories.forEach((c) => categories.add(c.toLowerCase())));
+  return [...categories].map((category) => ({
+    params: { category },
+    props: {
+      posts: posts
+        .filter((p) => p.data.categories.some((c) => c.toLowerCase() === category))
+        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
+    },
+  }));
+}
+
+const { category } = Astro.params;
+const { posts } = Astro.props;
+const label = category ? category[0].toUpperCase() + category.slice(1) : '';
+---
+<BaseLayout title={label} description={`Essays filed under ${label}`}>
+  <div class="layout">
+    <div class="posts">
+      <p class="eyebrow" style="margin: 2rem 0 0.5rem;">Category</p>
+      <h1>{label}</h1>
+      {posts.map((post: any) => (
+        <PostCard
+          title={post.data.title}
+          date={post.data.date}
+          categories={post.data.categories}
+          description={post.data.description}
+          href={`/posts/${post.id}/`}
+        />
+      ))}
+    </div>
+    <Sidebar />
+  </div>
+</BaseLayout>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 3rem;
+    padding-bottom: 3rem;
+  }
+  @media (max-width: 760px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+</style>

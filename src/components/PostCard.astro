@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  date: Date;
+  categories: string[];
+  description?: string;
+  href: string;
+}
+const { title, date, categories, description, href } = Astro.props;
+const dateStr = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<article class="post-card">
+  <p class="meta">
+    {categories.map((c) => (
+      <a class="tag" href={`/category/${c.toLowerCase()}/`}>{c}</a>
+    ))}
+    <span class="date">{dateStr}</span>
+  </p>
+  <h2><a href={href}>{title}</a></h2>
+  {description && <p class="excerpt">{description}</p>}
+  <a class="read-more" href={href}>Read more &rarr;</a>
+</article>
+
+<style>
+  .post-card {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .post-card:first-of-type { padding-top: 0.5rem; }
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 0.6rem;
+    flex-wrap: wrap;
+  }
+  .date {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+  h2 a { text-decoration: none; }
+  h2 a:hover { color: var(--accent); }
+  .excerpt {
+    color: var(--ink-soft);
+    margin: 0 0 0.6rem;
+    max-width: 65ch;
+  }
+  .read-more {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--accent);
+  }
+</style>

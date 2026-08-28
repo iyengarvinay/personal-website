@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft));
+
+const categoryCounts = new Map<string, number>();
+for (const p of posts) {
+  for (const c of p.data.categories) {
+    categoryCounts.set(c, (categoryCounts.get(c) ?? 0) + 1);
+  }
+}
+const categories = [...categoryCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+
+const archiveCounts = new Map<string, number>();
+for (const p of posts) {
+  const key = `${p.data.date.getFullYear()}-${String(p.data.date.getMonth() + 1).padStart(2, '0')}`;
+  archiveCounts.set(key, (archiveCounts.get(key) ?? 0) + 1);
+}
+const archives = [...archiveCounts.entries()].sort((a, b) => (a[0] < b[0] ? 1 : -1));
+
+function monthLabel(key: string) {
+  const [y, m] = key.split('-');
+  const d = new Date(Number(y), Number(m) - 1, 1);
+  return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+}
+---
+<aside class="sidebar">
+  <div class="widget">
+    <div id="search" class="search-box" data-pagefind-ui></div>
+  </div>
+
+  <div class="widget">
+    <h3 class="eyebrow">Categories</h3>
+    <ul>
+      {categories.map(([name, count]) => (
+        <li><a href={`/category/${name.toLowerCase()}/`}>{name}</a> <span class="count">{count}</span></li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="widget">
+    <h3 class="eyebrow">Archives</h3>
+    <ul class="archive-list">
+      {archives.map(([key, count]) => (
+        <li><a href={`/archive/${key}/`}>{monthLabel(key)}</a> <span class="count">{count}</span></li>
+      ))}
+    </ul>
+  </div>
+</aside>
+
+<style>
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .widget h3 {
+    margin: 0 0 0.75rem;
+  }
+  .widget ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .widget a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+  .widget a:hover { color: var(--accent); }
+  .count {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+  .archive-list {
+    max-height: 260px;
+    overflow-y: auto;
+  }
+</style>
