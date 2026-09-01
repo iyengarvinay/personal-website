@@ -1,5 +1,6 @@
 ---
 import VennMark from './VennMark.astro';
+import ThemeToggle from './ThemeToggle.astro';
 
 const nav = [
   { href: '/', label: 'Essays' },
@@ -26,6 +27,7 @@ const path = Astro.url.pathname;
             >{item.label}</a>
           </li>
         ))}
+        <li><ThemeToggle /></li>
       </ul>
     </nav>
   </div>
@@ -55,6 +57,7 @@ const path = Astro.url.pathname;
   }
   nav ul {
     display: flex;
+    align-items: center;
     gap: 1.5rem;
     list-style: none;
     margin: 0;
