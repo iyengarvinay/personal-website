@@ -24,8 +24,7 @@ const { size = 22, spin = false } = Astro.props;
     vertical-align: -4px;
     mix-blend-mode: multiply;
   }
-  .venn-mark.spin:hover,
-  :global(.site-header:hover) .venn-mark.spin {
+  .venn-mark.spin {
     animation: venn-spin 1.6s linear infinite;
   }
   @keyframes venn-spin {
