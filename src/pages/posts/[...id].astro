@@ -14,6 +14,8 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 const dateStr = post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const wordCount = (post.body ?? '').trim().split(/\s+/).filter(Boolean).length;
+const readingMinutes = Math.max(1, Math.round(wordCount / 225));
 ---
 <BaseLayout title={post.data.title} description={post.data.description}>
   <ReadingProgress />
@@ -23,6 +25,8 @@ const dateStr = post.data.date.toLocaleDateString('en-US', { year: 'numeric', mo
         <a class="tag" data-category={c.toLowerCase()} href={`/category/${c.toLowerCase()}/`}>{c}</a>
       ))}
       <span class="date">{dateStr}</span>
+      <span class="dot" aria-hidden="true">&middot;</span>
+      <span class="date">{readingMinutes} min read</span>
     </p>
     <h1>{post.data.title}</h1>
     <Content />
@@ -42,6 +46,10 @@ const dateStr = post.data.date.toLocaleDateString('en-US', { year: 'numeric', mo
     font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--muted);
+  }
+  .dot {
+    color: var(--muted);
+    font-size: 0.8rem;
   }
   h1 {
     font-size: 2.1rem;
