@@ -48,26 +48,77 @@ const { size = 22, spin = false } = Astro.props;
     }
   }
 
-  /* Easter egg: triple-click bursts the three circles apart and springs them back */
+  /* Easter egg: triple-click bursts the three circles apart (with a pop of
+     scale) and springs them back, plus a confetti particle pop (see script) */
   .venn-mark.burst .c1 { animation: burst-c1 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
   .venn-mark.burst .c2 { animation: burst-c2 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
   .venn-mark.burst .c3 { animation: burst-c3 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
   @keyframes burst-c1 {
-    0%, 100% { transform: translate(0, 0); }
-    40% { transform: translate(-9px, -7px); }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    40% { transform: translate(-11px, -9px) scale(1.2); }
   }
   @keyframes burst-c2 {
-    0%, 100% { transform: translate(0, 0); }
-    40% { transform: translate(9px, -7px); }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    40% { transform: translate(11px, -9px) scale(1.2); }
   }
   @keyframes burst-c3 {
-    0%, 100% { transform: translate(0, 0); }
-    40% { transform: translate(0, 11px); }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    40% { transform: translate(0, 13px) scale(1.2); }
+  }
+
+  /* Dynamically created by the click script and appended outside this
+     component's own markup, so it needs :global() to actually match —
+     Astro's scope attribute is only stamped onto this file's own template. */
+  :global(.venn-particle) {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: venn-particle-fly 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+  }
+  @keyframes venn-particle-fly {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
   }
 </style>
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function () {
+    var PARTICLE_COLORS = ['--circle-a', '--circle-b', '--circle-c'];
+
+    function spawnConfetti(mark) {
+      var parent = mark.parentElement;
+      if (!parent) return;
+      if (getComputedStyle(parent).position === 'static') {
+        parent.style.position = 'relative';
+      }
+      var markBox = mark.getBoundingClientRect();
+      var parentBox = parent.getBoundingClientRect();
+      var cx = markBox.left - parentBox.left + markBox.width / 2;
+      var cy = markBox.top - parentBox.top + markBox.height / 2;
+      var count = 12;
+      for (var i = 0; i < count; i++) {
+        var angle = (Math.PI * 2 * i) / count + Math.random() * 0.4;
+        var dist = 22 + Math.random() * 20;
+        var dx = Math.cos(angle) * dist;
+        var dy = Math.sin(angle) * dist;
+        var dot = document.createElement('span');
+        dot.className = 'venn-particle';
+        dot.style.left = cx + 'px';
+        dot.style.top = cy + 'px';
+        dot.style.background = 'var(' + PARTICLE_COLORS[i % PARTICLE_COLORS.length] + ')';
+        dot.style.setProperty('--dx', dx + 'px');
+        dot.style.setProperty('--dy', dy + 'px');
+        parent.appendChild(dot);
+        (function (el) {
+          setTimeout(function () {
+            el.remove();
+          }, 750);
+        })(dot);
+      }
+    }
+
     document.querySelectorAll('.venn-mark').forEach(function (mark) {
       var clickTimes = [];
       var navTimer = null;
@@ -93,6 +144,7 @@ const { size = 22, spin = false } = Astro.props;
           // Force reflow so re-adding the class restarts the animation.
           void mark.offsetWidth;
           mark.classList.add('burst');
+          spawnConfetti(mark);
           setTimeout(function () {
             mark.classList.remove('burst');
           }, 650);
