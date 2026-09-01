@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ReadingProgress from '../components/ReadingProgress.astro';
 ---
-<BaseLayout title="Job Guide" description="A guide to breaking into venture and tech, from The Vin Diagram.">
-  <article class="prose" style="padding: 2rem 0 4rem;">
-    <h1>Job Guide</h1>
+<BaseLayout title="The Ultimate Guide to Finding a Startup Job" description="A guide to breaking into venture and tech, from The Vin Diagram.">
+  <ReadingProgress />
+  <article class="prose" style="padding: 2rem 0 4rem;" data-pagefind-body>
     <p class="meta"><span class="reading-time" id="job-guide-reading-time"></span></p>
     <div id="job-guide-body">
-    <h2>The Ultimate Guide to Finding a Startup Job</h2>
+    <h1>The Ultimate Guide to Finding a Startup Job</h1>
     <p>I originally wrote this guide in 2020 when tech markets were at an all-time high and venture-backed startup jobs were among the most desirable. While things have cooled off considerably since then, I continue to believe that joining a startup is among the very best career options for young people in 2024. Jobs at high-growth startups offer some of the best opportunities to learn new skills, build your network, and create long-term wealth. Before we jump in, a quick summary of what has changed in the past few years and the job market outlook for 2025:</p>
     <ul>
     <li><strong>Startup jobs are much harder to get</strong> – given the market environment, startups are optimizing for preserving cash and extending runway, which means they are much more selective than before and less likely to take a bet on hiring young people without a ton of experience. This doesn’t mean it’s impossible.</li>
@@ -111,17 +112,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p>Thank you for reading this guide. I truly hope it was helpful and will make the startup path a bit easier for you to navigate. Please let me know if you have any feedback or comments. If I can be of any help, do not hesitate to reach out.</p>
     </div>
   </article>
+  <p class="back"><a href="/">&larr; Back to all essays</a></p>
 </BaseLayout>
 
 <style>
   .meta {
-    margin: 0.5rem 0 0;
+    display: flex;
+    align-items: center;
+    margin: 2rem 0 0.75rem;
   }
   .reading-time {
     font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--muted);
   }
+  h1 {
+    font-size: 2.1rem;
+    line-height: 1.2;
+    margin: 0 0 1.5rem;
+  }
+  .back {
+    margin: 2rem 0 4rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+  .back a { color: var(--accent); text-decoration: none; }
 </style>
 
 <script is:inline>
