@@ -1,15 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
+import CategoryVenn from './CategoryVenn.astro';
 
 const posts = (await getCollection('posts', ({ data }) => !data.draft));
-
-const categoryCounts = new Map<string, number>();
-for (const p of posts) {
-  for (const c of p.data.categories) {
-    categoryCounts.set(c, (categoryCounts.get(c) ?? 0) + 1);
-  }
-}
-const categories = [...categoryCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
 
 const archiveCounts = new Map<string, number>();
 for (const p of posts) {
@@ -31,11 +24,7 @@ function monthLabel(key: string) {
 
   <div class="widget">
     <h3 class="eyebrow">Categories</h3>
-    <ul>
-      {categories.map(([name, count]) => (
-        <li><a href={`/category/${name.toLowerCase()}/`}>{name}</a> <span class="count">{count}</span></li>
-      ))}
-    </ul>
+    <CategoryVenn />
   </div>
 
   <div class="widget">
