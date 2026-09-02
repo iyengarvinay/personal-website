@@ -11,52 +11,42 @@ for (const p of posts) {
 }
 
 // Fixed circle assignment so colors always match the tag styling and the
-// header's spinning mark, regardless of which categories exist.
+// header's spinning mark, regardless of which categories exist. Label
+// anchors sit just outside each circle's own edge, on the page background,
+// so the label text stays legible in both themes without fighting the
+// diagram's multiply/screen blend mode.
 const CIRCLES = [
-  { name: 'Investing', cx: 51, cy: 48, colorVar: '--circle-a' },
-  { name: 'Policy', cx: 81, cy: 48, colorVar: '--circle-b' },
-  { name: 'Technology', cx: 66, cy: 78, colorVar: '--circle-c' },
+  { name: 'Investing', cx: 71, cy: 73, colorVar: '--circle-a', labelX: 6, labelY: 20, anchor: 'start' },
+  { name: 'Policy', cx: 101, cy: 73, colorVar: '--circle-b', labelX: 164, labelY: 20, anchor: 'end' },
+  { name: 'Technology', cx: 86, cy: 103, colorVar: '--circle-c', labelX: 86, labelY: 158, anchor: 'middle' },
 ];
 const circles = CIRCLES.map((c) => ({ ...c, count: categoryCounts.get(c.name) ?? 0 })).filter(
   (c) => c.count > 0
 );
 ---
 <div class="category-venn">
-  <svg viewBox="0 0 132 120" width="100%" role="img" aria-label="Post categories">
+  <svg viewBox="0 0 170 165" width="100%" role="img" aria-label="Post categories">
     {circles.map((c) => (
       <a href={`/category/${c.name.toLowerCase()}/`} class="venn-cat" aria-label={`${c.name} (${c.count})`}>
         <circle cx={c.cx} cy={c.cy} r="39" fill={`var(${c.colorVar})`} opacity="0.82" />
+        <text x={c.labelX} y={c.labelY} text-anchor={c.anchor} fill={`var(${c.colorVar})`}>
+          {c.name}
+          <tspan class="count-tspan"> {c.count}</tspan>
+        </text>
       </a>
     ))}
   </svg>
-  <ul class="legend">
-    {circles.map((c) => (
-      <li>
-        <a href={`/category/${c.name.toLowerCase()}/`}>
-          <span class="swatch" style={`background: var(${c.colorVar})`}></span>
-          {c.name}
-        </a>
-        <span class="count">{c.count}</span>
-      </li>
-    ))}
-  </ul>
 </div>
 
 <style>
-  .category-venn {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-  }
-  svg {
+  .category-venn svg {
     mix-blend-mode: multiply;
-    max-width: 200px;
   }
-  :global([data-theme='dark']) svg {
+  :global([data-theme='dark']) .category-venn svg {
     mix-blend-mode: screen;
   }
   @media (prefers-color-scheme: dark) {
-    :global(:root:not([data-theme='light'])) svg {
+    :global(:root:not([data-theme='light'])) .category-venn svg {
       mix-blend-mode: screen;
     }
   }
@@ -65,42 +55,23 @@ const circles = CIRCLES.map((c) => ({ ...c, count: categoryCounts.get(c.name) ??
     transform-origin: center;
     transform-box: fill-box;
   }
+  .venn-cat text {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    transition: opacity 0.15s ease;
+  }
+  .count-tspan {
+    font-weight: 400;
+    opacity: 0.65;
+  }
   .venn-cat:hover circle,
   .venn-cat:focus-visible circle {
     opacity: 1;
     transform: scale(1.04);
   }
-  .legend {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-  .legend li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .legend a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: var(--ink-soft);
-    font-size: 0.95rem;
-  }
-  .legend a:hover { color: var(--accent); }
-  .swatch {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex: none;
-  }
-  .count {
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
+  .venn-cat:hover text,
+  .venn-cat:focus-visible text {
+    text-decoration: underline;
   }
 </style>
