@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts', ({ data }) => !data.draft);
+
+const archiveCounts = new Map<string, number>();
+for (const p of posts) {
+  const key = `${p.data.date.getFullYear()}-${String(p.data.date.getMonth() + 1).padStart(2, '0')}`;
+  archiveCounts.set(key, (archiveCounts.get(key) ?? 0) + 1);
+}
+
+const years = [...new Set(posts.map((p) => p.data.date.getFullYear()))].sort((a, b) => b - a);
+const maxCount = Math.max(...archiveCounts.values());
+const MONTHS = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
+const MONTH_NAMES = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+---
+<div class="archive-calendar">
+  <div class="months-header">
+    <span class="year-spacer"></span>
+    {MONTHS.map((m) => <span class="month-letter">{m}</span>)}
+  </div>
+  {years.map((year) => (
+    <div class="year-row">
+      <span class="year-label">{year}</span>
+      {MONTH_NAMES.map((_, i) => {
+        const key = `${year}-${String(i + 1).padStart(2, '0')}`;
+        const count = archiveCounts.get(key) ?? 0;
+        const intensity = count > 0 ? 0.25 + 0.75 * (count / maxCount) : 0;
+        return count > 0 ? (
+          <a
+            href={`/archive/${key}/`}
+            class="cell filled"
+            style={`--fill: ${intensity}`}
+            aria-label={`${MONTH_NAMES[i]} ${year}: ${count} post${count > 1 ? 's' : ''}`}
+            title={`${MONTH_NAMES[i]} ${year} — ${count} post${count > 1 ? 's' : ''}`}
+          ></a>
+        ) : (
+          <span class="cell" aria-hidden="true"></span>
+        );
+      })}
+    </div>
+  ))}
+</div>
+
+<style>
+  .archive-calendar {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-family: var(--font-mono);
+  }
+  .months-header,
+  .year-row {
+    display: grid;
+    grid-template-columns: 2.4em repeat(12, 1fr);
+    gap: 3px;
+    align-items: center;
+  }
+  .year-spacer { display: block; }
+  .month-letter {
+    font-size: 0.62rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  .year-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .cell {
+    aspect-ratio: 1;
+    border-radius: 2px;
+    background: var(--line);
+    display: block;
+  }
+  .cell.filled {
+    background: color-mix(in srgb, var(--accent) calc(var(--fill) * 100%), var(--line));
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .cell.filled:hover,
+  .cell.filled:focus-visible {
+    transform: scale(1.25);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+</style>

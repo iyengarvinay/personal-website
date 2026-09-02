@@ -1,21 +1,6 @@
 ---
-import { getCollection } from 'astro:content';
 import CategoryVenn from './CategoryVenn.astro';
-
-const posts = (await getCollection('posts', ({ data }) => !data.draft));
-
-const archiveCounts = new Map<string, number>();
-for (const p of posts) {
-  const key = `${p.data.date.getFullYear()}-${String(p.data.date.getMonth() + 1).padStart(2, '0')}`;
-  archiveCounts.set(key, (archiveCounts.get(key) ?? 0) + 1);
-}
-const archives = [...archiveCounts.entries()].sort((a, b) => (a[0] < b[0] ? 1 : -1));
-
-function monthLabel(key: string) {
-  const [y, m] = key.split('-');
-  const d = new Date(Number(y), Number(m) - 1, 1);
-  return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-}
+import ArchiveCalendar from './ArchiveCalendar.astro';
 ---
 <aside class="sidebar">
   <div class="widget">
@@ -29,11 +14,7 @@ function monthLabel(key: string) {
 
   <div class="widget">
     <h3 class="eyebrow">Archives</h3>
-    <ul class="archive-list">
-      {archives.map(([key, count]) => (
-        <li><a href={`/archive/${key}/`}>{monthLabel(key)}</a> <span class="count">{count}</span></li>
-      ))}
-    </ul>
+    <ArchiveCalendar />
   </div>
 </aside>
 
@@ -64,9 +45,5 @@ function monthLabel(key: string) {
     color: var(--muted);
     font-family: var(--font-mono);
     font-size: 0.78rem;
-  }
-  .archive-list {
-    max-height: 260px;
-    overflow-y: auto;
   }
 </style>
