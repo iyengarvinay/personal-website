@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/feed/",
+      "destination": "/rss.xml",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug/",
+      "destination": "/posts/:year-:month-:day-:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:month(\\d{2})/",
+      "destination": "/archive/:year-:month/",
+      "permanent": true
+    }
+  ]
+}
