@@ -17,7 +17,7 @@ const dateStr = post.data.date.toLocaleDateString('en-US', { year: 'numeric', mo
 const wordCount = (post.body ?? '').trim().split(/\s+/).filter(Boolean).length;
 const readingMinutes = Math.max(1, Math.round(wordCount / 225));
 ---
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout title={post.data.title} description={post.data.description} image={`/og/${post.id}.png`}>
   <ReadingProgress />
   <article class="prose" data-pagefind-body>
     <p class="meta">
