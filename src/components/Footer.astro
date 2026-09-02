@@ -1,8 +1,8 @@
 ---
 const year = new Date().getFullYear();
 const links = [
-  { href: 'https://www.linkedin.com/in/vinayiyengar', label: 'LinkedIn' },
-  { href: 'http://twitter.com/viniyengar', label: 'Twitter' },
+  { href: 'https://www.linkedin.com/in/vinayiyengar', label: 'LinkedIn', external: true },
+  { href: 'http://twitter.com/viniyengar', label: 'Twitter', external: true },
   { href: 'mailto:vinaysiyengar@gmail.com', label: 'Email' },
   { href: '/rss.xml', label: 'RSS' },
 ];
@@ -13,7 +13,13 @@ const links = [
     <div class="footer-row">
       <p>&copy; {year} The Vin Diagram</p>
       <ul>
-        {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        {links.map((l) => (
+          <li>
+            <a href={l.href} target={l.external ? '_blank' : undefined} rel={l.external ? 'noopener noreferrer' : undefined}>
+              {l.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   </div>
