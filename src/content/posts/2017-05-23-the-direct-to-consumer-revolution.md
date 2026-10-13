@@ -20,7 +20,7 @@ Finally, the removal of the middleman and the associated 2x to 4x markup transla
 
 The D2C business model has proliferated throughout the startup world. Below, we have compiled the six laws for those interested in D2C startups, whether from the perspective of a founder, investor, or advisor.
 
-![](https://cdn-images-1.medium.com/max/800/1*VgbIosciWFm8zMBuZ3Fikw.jpeg)
+![Diagram of the six traits of a great direct-to-consumer company: differentiated product (Brooklinen, Dollar Shave Club), stellar customer experience (Lola, Ollie), a brand customers are proud to support (Everlane, Cotopaxi), user evangelists (Allbirds), online and offline data collection (Warby Parker), and smart packaging and delivery (Casper)](./images/2017-05-23-the-direct-to-consumer-revolution/six-laws-of-d2c.jpg)
 
 The six laws that define a great direct-to-consumer company
 
