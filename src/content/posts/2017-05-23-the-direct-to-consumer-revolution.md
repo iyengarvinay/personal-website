@@ -42,7 +42,7 @@ The key advantage of a D2C model is the ability to “own” the entire customer
 
 [Lola](https://www.mylola.com/), a feminine care company, offers one box of products free on the first shipment of a subscription. [Ollie](https://www.myollie.com/), a dog food company, prompts visitors to design their dog’s custom food and onboards them with a questionnaire that asks everything from the dog’s name to its physical activity level.
 
-![](https://cdn-images-1.medium.com/max/800/1*d8NMdySXYkcSWyKXYhw2vw.png)
+![Ollie's onboarding form, which asks for the owner's name, the dog's name, breed, sex and birthday, and how active the dog is](./images/2017-05-23-the-direct-to-consumer-revolution/ollie-onboarding.png)
 
 *Ollie has a simple, modern user onboarding flow that asks for details such as the dog’s name and uses playful animations to show that the company cares as much about your dog and its health as you do.*
 
@@ -58,7 +58,7 @@ Companies such as [Cotopaxi](https://www.cotopaxi.com/) and [Allbirds](https:
 
 Other D2C companies have embraced transparency to instill pride in their customers. [Everlane](https://www.everlane.com/), an online D2C retailer of basic apparel and accessories, has built its entire brand around its motto of “radical transparency.” It shows the production costs and markup for all its items and provides in-depth profiles of each of its factories.
 
-![](https://cdn-images-1.medium.com/max/800/1*AJxqlSGAtlRXhI5zO53slg.png)
+![Everlane's factories page, with photos of its woven scarf, shoe, specialty knits, tailored shirting and Pima tee factories and its distribution center](./images/2017-05-23-the-direct-to-consumer-revolution/everlane-factories.webp)
 
 *Everlane’s website profiles the factories where its products are made and includes details like the weather, the factory owner’s story, and photos of the production process.*
 
@@ -78,7 +78,7 @@ Because D2C companies control the entire customer experience, they are able to c
 
 For example, [Warby Parker](https://www.warbyparker.com/) wanted to help its customers find the frames that they’ll be most likely to purchase. It sent its Home Try-On kit to customers, which allows them to receive five free frames to try on before purchasing. Using the subsequent purchase data, they built an online recommendation tool to guide prospective customers. Warby Parker linked the offline and the online to collect actionable data, increase customer satisfaction, and drive sales.
 
-![](https://cdn-images-1.medium.com/max/800/1*QKOxdaOpSIyeCq8ySfrrFg.jpeg)
+![An open Warby Parker Home Try-On box holding five pairs of glasses](./images/2017-05-23-the-direct-to-consumer-revolution/warby-parker-home-try-on.jpg)
 
 *Warby Parker collected offline data through its Home Try-On program and linked it with subsequent online purchase data to build a better online recommendation tool.*
 
