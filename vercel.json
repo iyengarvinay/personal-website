@@ -1,8 +1,19 @@
 {
+  "trailingSlash": true,
   "redirects": [
     {
       "source": "/feed/",
       "destination": "/rss.xml",
+      "permanent": true
+    },
+    {
+      "source": "/:path*/feed/",
+      "destination": "/rss.xml",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug/amp/",
+      "destination": "/posts/:year-:month-:day-:slug/",
       "permanent": true
     },
     {
@@ -13,6 +24,26 @@
     {
       "source": "/:year(\\d{4})/:month(\\d{2})/",
       "destination": "/archive/:year-:month/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/page/:n(\\d+)/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:category/page/:n(\\d+)/",
+      "destination": "/category/:category/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:name/",
+      "destination": "/about/",
       "permanent": true
     }
   ]
