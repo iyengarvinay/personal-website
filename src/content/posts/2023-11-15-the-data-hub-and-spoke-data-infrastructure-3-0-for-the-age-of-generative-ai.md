@@ -8,7 +8,7 @@ originalSlug: "2023/11/15/the-data-hub-and-spoke-data-infrastructure-3-0-for-the
 
 Over the past decade, the term “modern data stack” has come into prominence with the rise of cloud-native software and an increasingly smart, connected world. With workloads shifting to the cloud and an abundance of new, real-time data coming online, enterprises have adopted cloud data warehouses as their systems of record, along with a set of specialized point solutions to aggregate, clean, filter, and analyze this data. This marks an unbundling of the old guard of monolithic, on-prem data infrastructure solutions like Informatica, Teradata, and Alteryx.
 
-[![](https://foundationcapital.com/wp-content/uploads/2024/05/Data-Infra-1.0-2.0_v3.4.png)](https://foundationcapital.com/wp-content/uploads/2024/05/Data-Infra-1.0-2.0_v3.4.png)
+![Diagram comparing Data Infra 1.0, the monolithic on-prem stack (structured data, ETL and on-prem storage feeding apps, reports and analytics; Alteryx, Informatica, Pentaho, Teradata), with Data Infra 2.0, the modern data stack: data sources, integration (Airbyte, dltHub, Fivetran, Meltano, Stitch), storage (Redshift, Databricks, Delta Lake, BigQuery, Snowflake), transformation (dbt, Dataform) and uses (Power BI, Tableau, DataRobot, Jupyter), plus orchestration, governance, versioning and data quality layers](./images/2023-11-15-the-data-hub-and-spoke-data-infrastructure-3-0-for-the-age-of-generative-ai/data-infra-1-0-vs-2-0.png)
 
 However, with this explosion in data tooling, we’ve lost some of the benefits of the traditional data stack: most notably, the control, visibility, and ease of use that comes with everything living in a single place. Today’s modern data stack has become overly complex, fragmented, and costly to manage. Moreover, for large enterprises, this stack is difficult to both configure and derive value from on an ongoing basis, as it relies on a centralized team of technical, domain experts.
 
@@ -28,7 +28,7 @@ Second, the rise of generative AI and transformer models promises to dramaticall
 
 LLMs also show promise for automating other time-consuming tasks across the data lifecycle, including building and maintaining data pipelines, running ETL jobs, and creating connectors to diverse data sources. While in their early stages today, these capabilities will eventually become the norm for how we interact with data. Both startups and incumbents are making meaningful progress toward this next generation of business intelligence (BI) tools, with a central focus on natural-language interfaces that democratize data access.
 
-[![](https://foundationcapital.com/wp-content/uploads/2023/11/Data-Infra_Market-Map_v3.png)](https://foundationcapital.com/wp-content/uploads/2023/11/Data-Infra_Market-Map_v3.png)
+![Market map of generative-AI-powered BI tools: Avian, DataChat, Defog, Ember Labs, Julius, NLSQL, Numbers Station, TextQL, ThoughtSpot, Vanna.AI, Veezoo and Wand](./images/2023-11-15-the-data-hub-and-spoke-data-infrastructure-3-0-for-the-age-of-generative-ai/generative-ai-bi-tools-market-map.png)
 
 ## 03 – The growing value of unstructured, semistructured, and multimodal data
 
@@ -38,7 +38,7 @@ Finally, generative AI is driving increasing interest in storing and making sens
 
 ## The Data Hub and Spoke
 
-[![](https://foundationcapital.com/wp-content/uploads/2023/11/Data-Infra-3.0_v6.3.png)](https://foundationcapital.com/wp-content/uploads/2023/11/Data-Infra-3.0_v6.3.png)
+![Diagram of Data Infra 3.0, the hub and spoke model: a hub of object storage (S3, GCS) wrapped in an open table format (Apache Hudi, Apache Iceberg) connects through an in-flight ETL and governance layer (dltHub) to spokes for finance, marketing, fraud, observability and HR teams, each with a natural-language BI layer and an embedded database (KuzuDB, DuckDB)](./images/2023-11-15-the-data-hub-and-spoke-data-infrastructure-3-0-for-the-age-of-generative-ai/data-infra-3-0-hub-and-spoke.png)
 
 Our view is that these three trends, combined with advances in compute and storage infrastructure, will lead to a third generation of data infrastructure tooling: the hub-and-spoke model. Let’s unpack the subtleties of this model and some of the implications for startups building in the space.
 
