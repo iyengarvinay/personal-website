@@ -40,8 +40,6 @@ So what has led to this renaissance, and where will it take us? We’re eyeing t
 
 **Financial infrastructure** | Last but not least, the cheap debt capital environment of the past decade has been hugely helpful to startups looking for non-dilutive means of financing inventory. Moreover, a number of payments infrastructure innovations have also made it easier than ever to pay vendors, offer subscription billing options, and access working capital.
 
-![](https://twosigmaventures.com/wp-content/uploads/sites/2/atoms-and-bits-chart-2022-05-19@4x.png)
-
 **Paving the path for a new generation of category-defining businesses**
 
 At Two Sigma Ventures, we’re excited about supporting atoms and bits founders who apply their inventiveness towards championing progress–not just in terms of business success, but in the impact they make on the world. To learn more about the not-so-distant future of the atoms and bits renaissance, spend time with our startups who are working on actively creating it:
