@@ -6,7 +6,7 @@ description: "The latest data from the Two Sigma Ventures Open Source Index is n
 originalSlug: "2021/09/28/the-latest-insights-from-the-tsv-open-source-index"
 ---
 
-The latest data from the Two Sigma Ventures Open Source Index is now live [here](https://twosigmaventures.com/open-source-index/). As a reminder, the goal of the Index is to rank what we deem the top 100 most influential open source projects in the world and to surface insights for entrepreneurs and developers in the open source ecosystem. You can read more about our methodology from our [launch post](https://twosigmaventures.com/blog/article/launching-the-two-sigma-ventures-open-source-100-index/) in March, but at a high level, we aggregate Github data on project popularity, growth and developer community to create what we call the “TSV Score” for each project. Below are a few of our key learnings from the latest iteration of the Index:
+The latest data from the Two Sigma Ventures Open Source Index is now live [here](https://twosigmaventures.com/open-source-index/). As a reminder, the goal of the Index is to rank what we deem the top 100 most influential open source projects in the world and to surface insights for entrepreneurs and developers in the open source ecosystem. You can read more about our methodology from our [launch post](/posts/2021-04-19-launching-the-two-sigma-ventures-open-source-index/) in March, but at a high level, we aggregate Github data on project popularity, growth and developer community to create what we call the “TSV Score” for each project. Below are a few of our key learnings from the latest iteration of the Index:
 
 **The API-ification of software**
 
@@ -30,7 +30,7 @@ Source: StackOverflow, 2021
 
 **The JAMstack’s ubiquity**
 
-As we [highlighted](https://twosigmaventures.com/blog/article/the-great-unbundling-jamstack-and-the-future-of-the-web/) earlier this year, we believe the JAMstack is becoming the new standard for building web applications. This trend is further reflected in our latest Index, where a staggering number of projects are JAMstack-related. For starters, JavaScript (the J of JAMstack) is by far the most represented language in our Index, comprising 27 of the top 100 projects. Moreover, many projects represent core elements of the JAMstack workflow, including design frameworks (storybook, material-ui), static site generators (gatsby, hugo, jekyll), testing tools (cypress) and deployment tools (next.js/Vercel).
+As we [highlighted](/posts/2021-07-23-the-great-unbundling-jamstack-and-the-future-of-the-web/) earlier this year, we believe the JAMstack is becoming the new standard for building web applications. This trend is further reflected in our latest Index, where a staggering number of projects are JAMstack-related. For starters, JavaScript (the J of JAMstack) is by far the most represented language in our Index, comprising 27 of the top 100 projects. Moreover, many projects represent core elements of the JAMstack workflow, including design frameworks (storybook, material-ui), static site generators (gatsby, hugo, jekyll), testing tools (cypress) and deployment tools (next.js/Vercel).
 
 **Startups continue to innovate at an unprecedented pace**
 
