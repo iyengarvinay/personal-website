@@ -145,7 +145,7 @@ h1, h2, h3 {
   border-radius: var(--radius);
   font-size: 0.9em;
 }
-.prose img { max-width: 100%; border-radius: var(--radius); }
+.prose img { max-width: 100%; height: auto; border-radius: var(--radius); }
 
 .tag {
   display: inline-block;
