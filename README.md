@@ -7,8 +7,8 @@ on a much simpler stack.
 ## Stack
 - **Astro** — static site generator, content lives as Markdown files in the repo
 - **Pagefind** — static, client-side search (no server, no third-party search index)
-- **Plausible Analytics** — one script tag, no cookie banner needed (swap for
-  Fathom or GA4 if you prefer — see `src/components/Analytics.astro`)
+- **Vercel Web Analytics** — privacy-friendly page views, no cookie banner
+  needed (see `src/components/Analytics.astro`)
 - Deploys to **Vercel** or **Netlify** for free, connected to a GitHub repo
 
 ## Local development
@@ -60,9 +60,9 @@ build` to run once for the index to exist. It won't show results in `npm run
 dev`, only after a build.
 
 ## Analytics
-Sign up at plausible.io, add `vinayiyengar.com` as a site, and the snippet
-in `Analytics.astro` will start reporting automatically once deployed (it's
-gated to production so local dev traffic isn't counted).
+Vercel Web Analytics (`@vercel/analytics`) is included on every page. Turn it
+on in the Vercel project's **Analytics** tab; page views appear there once the
+site is deployed. Nothing is tracked in local dev.
 
 ## Deploying
 1. Push this repo to GitHub.
