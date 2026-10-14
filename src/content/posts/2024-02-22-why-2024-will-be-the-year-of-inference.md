@@ -32,7 +32,7 @@ This fragmentation has two sides. The emergence of inference-specific clouds and
 
 **We see a future that is multi-model, multi-modal, multi-cloud, and multi-chip.** The diagram below shows the three distinct layers of the generative AI inference stack that are emerging.
 
-![](https://foundationcapital.com/wp-content/uploads/2024/02/Inference_ChartB_v1-1024x564.png)
+![Diagram of the three layers of the generative AI inference stack. Model: language (GPT-4, Llama 2, Claude), image (DALL-E 2, Stable Diffusion, Midjourney), video (NUWA Infinity, Runway, MagicVideo) and code (Codex, CodeT5+, StarCoder, PolyCoder). Cloud: GPU clouds (CoreWeave, Crusoe, Lambda, Paperspace) and cloud service providers (AWS, Azure, Google Cloud, IBM). Chip: AWS Inferentia, Intel Gaudi 2, AMD, NVIDIA, Graphcore and Qualcomm](./images/2024-02-22-why-2024-will-be-the-year-of-inference/generative-ai-inference-stack.webp)
 
 ## Inference Isn’t One-Size-Fits-All
 
@@ -42,7 +42,7 @@ Some care about the lowest cost. Others care about having the best user experien
 
 Startups are stepping in to tame this fragmentation complexity. Some focus on completely abstracting away complexity for the developer and taking care of all hosting needs, like early leaders Baseten and Modal. Others consider themselves to be new-age compilers, providing more control and flexibility for the developer. An emerging category of startup is LLM routers, which are able to intelligently route prompts to different models based on some optimization criteria. Finally, there are a few emerging open source projects that bill themselves as the optimal inference engines.
 
-![](https://foundationcapital.com/wp-content/uploads/2024/02/Inference_ChartC_v1-1024x741.png)
+![Market map of inference players. Compilers: Autonomi AI, Modular, Foundry. Routing: Martian, Not Diamond, OpenRouter. Open-source tools: Axolotl, vLLM. Hosting and serving: Abacus.AI, Banana, Baseten, DeepInfra, Decart.AI, Evolusion AI, Fireworks.ai, fal, Lightning AI, Lepton AI, Modal, Run:ai, Replicate, TrueFoundry and Together.ai](./images/2024-02-22-why-2024-will-be-the-year-of-inference/inference-market-map.webp)
 
 ## Predictions for the Inference Ecosystem
 
