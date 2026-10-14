@@ -6,7 +6,7 @@ description: "Originally published on the Two Sigma Ventures blog. Co-authored w
 originalSlug: "2020/10/27/the-rise-of-ml-ops-why-model-performance-monitoring-could-be-the-next-billion-dollar-industry"
 ---
 
-Originally published on the [Two Sigma Ventures blog](https://twosigmaventures.com/blog/article/the-rise-of-ml-ops-why-model-performance-monitoring-could-be-the-next-billion-dollar-industry/). Co-authored with Frances Schwiep.
+Originally published on the Two Sigma Ventures blog. Co-authored with Frances Schwiep.
 
 ##### *Data-driven software is the future. This shift is bringing about a new category of tools—what we call model performance monitoring (MPM).*
 

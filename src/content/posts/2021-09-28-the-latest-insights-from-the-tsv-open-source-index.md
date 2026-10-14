@@ -6,7 +6,7 @@ description: "The latest data from the Two Sigma Ventures Open Source Index is n
 originalSlug: "2021/09/28/the-latest-insights-from-the-tsv-open-source-index"
 ---
 
-The latest data from the Two Sigma Ventures Open Source Index is now live [here](https://twosigmaventures.com/open-source-index/). As a reminder, the goal of the Index is to rank what we deem the top 100 most influential open source projects in the world and to surface insights for entrepreneurs and developers in the open source ecosystem. You can read more about our methodology from our [launch post](/posts/2021-04-19-launching-the-two-sigma-ventures-open-source-index/) in March, but at a high level, we aggregate Github data on project popularity, growth and developer community to create what we call the “TSV Score” for each project. Below are a few of our key learnings from the latest iteration of the Index:
+The latest data from the Two Sigma Ventures Open Source Index is now live here. As a reminder, the goal of the Index is to rank what we deem the top 100 most influential open source projects in the world and to surface insights for entrepreneurs and developers in the open source ecosystem. You can read more about our methodology from our [launch post](/posts/2021-04-19-launching-the-two-sigma-ventures-open-source-index/) in March, but at a high level, we aggregate Github data on project popularity, growth and developer community to create what we call the “TSV Score” for each project. Below are a few of our key learnings from the latest iteration of the Index:
 
 **The API-ification of software**
 
