@@ -14,11 +14,11 @@ At the beginning of 2018, I wrote a post outlining a [few of my predictions](htt
 
 As the chart below indicates, US VC deal activity heated up to record levels; in fact, capital invested into tech startups exceeded $100b for the first time since 2000, which was the previous all-time high. And this massive amount of capital went into fewer deals than the previous year, as late-stage investors like Softbank doubled down on winners in growth equity deals.
 
-![](https://www.vinayiyengar.com/wp-content/uploads/2019/09/valuation1.jpg)
+![Chart of US VC deal activity, 2008–2018: deal value grew from $36.9B to $130.9B (including Juul's $12.8B round) while deal count peaked at 10,740 in 2015 and fell to 8,948 in 2018. Source: PitchBook-NVCA Venture Monitor](./images/2019-01-29-my-2018-predictions-how-did-i-do/us-vc-deal-activity.jpg)
 
 Overall, this translated into rising valuations at every stage, with the most notable spike being in the later-stage deals as the graph below shows. Yet 2018 saw 4 hikes in the federal funds rate and a flat public market which my original thesis predicted would lead to more hesitance in the private markets – so what happened? Since LPs commit money to funds for typically a 10-year period, there’s a lag between LP behavior and private market valuations. If these macro trends continue, the valuation correction I’ve been hoping for will take place in the next couple years. But then again, who knows!
 
-![](https://www.vinayiyengar.com/wp-content/uploads/2019/09/valuation2.png)
+![Three charts, 2013–2018: median pre-money valuations rose at every stage, reaching $7M for angel/seed, $20M for Series A, $56M for Series B, $115M for Series C and $325M for Series D+, while median company age rose at each stage](./images/2019-01-29-my-2018-predictions-how-did-i-do/valuations-and-company-age-by-stage.png)
 
 **The prediction?** The ICO craze will settle down and a few valuable tokens will endure.
 
