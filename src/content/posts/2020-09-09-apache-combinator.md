@@ -20,11 +20,11 @@ Broadly speaking, there are two types of licenses for open source projects: [cop
 
 When the Apache Foundation was creating their own license in 1999, they instead decided to opt for a more “permissive” one, modeled after the [BSD](https://en.wikipedia.org/wiki/BSD_licenses#:~:text=BSD%20licenses%20are%20a%20family,and%20distribution%20of%20covered%20software.&text=The%20original%20BSD%20license%20was,a%20Unix%2Dlike%20operating%20system.) license. This was done for the purposes of helping the HTTP community grow quickly and ensuring that anybody could use the software without worrying about adhering to license regulations. Under permissive licenses, open source projects can be more freely modified and distributed, even if this means being turned into a commercial product or discrediting the core developers of the project. While the Apache Foundation was not the first to create or use a permissive license for open source distribution, they pioneered its use for major projects and as a result, the Apache license has become one of the most widely used today. 
 
-![](https://www.vinayiyengar.com/wp-content/uploads/2020/09/itemeditorimage_5e287eceddc3a.jpg)
+![Chart of the top open source licenses in 2019: MIT is used by about 27% of projects and Apache 2.0 by about 23%, followed by GPLv3, GPLv2, BSD 3, LGPLv2.1, BSD 2, Microsoft Public, Eclipse 1.0 and BSD](./images/2020-09-09-apache-combinator/top-open-source-licenses-2019.jpg)
 
 According to [WhiteSource](https://resources.whitesourcesoftware.com/blog-whitesource/open-source-licenses-trends-and-predictions), the Apache Foundation’s license is used in nearly 25% of projects and it is the second most popular license, after the [MIT license](https://opensource.org/licenses/MIT), a similarly permissive license.
 
-![](https://www.vinayiyengar.com/wp-content/uploads/2020/09/itemeditorimage_5e287f7dbbf1c.jpg)
+![Chart of permissive vs. copyleft open source licenses over time: permissive licenses grew from 41% of projects in 2012 to 55% in 2016, 59% in 2017, 64% in 2018 and 67% in 2019, while copyleft fell from 59% to 33%](./images/2020-09-09-apache-combinator/permissive-vs-copyleft-licenses.jpg)
 
 Moreover, mirroring the rapid rise of open core and open source, the past 8 years have seen a rapid decline in the use of copyleft licenses and a corresponding increase in the use of permissive licenses. It is fascinating to note that the rise of open source can largely be attributed to changes in the legal structure behind licenses and increased empowerment for developers to create commercial products using open source components. 
 
