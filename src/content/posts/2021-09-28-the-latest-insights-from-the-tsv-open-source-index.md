@@ -24,7 +24,7 @@ The rise of React, the #5 project in our Index, as a dominant front-end framewor
 
 This chart of StackOverflow mentions further highlights the recent rise of Flutter and the demise of other frameworks like jquery and angular.
 
-![](https://twosigmaventures.com/wp-content/uploads/sites/2/flutter.png)
+![Line chart of the share of Stack Overflow questions each month by framework, 2009–2021: jQuery peaks near 8% around 2014 and falls below 2%, AngularJS rises and fades by 2019, React climbs to over 5%, Angular levels off around 2%, and Flutter rises steadily to nearly 3% by 2021, passing Angular, jQuery and Vue.js](./images/2021-09-28-the-latest-insights-from-the-tsv-open-source-index/stack-overflow-framework-questions.png)
 
 Source: StackOverflow, 2021
 
