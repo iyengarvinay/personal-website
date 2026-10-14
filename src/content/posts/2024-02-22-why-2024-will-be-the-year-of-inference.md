@@ -10,7 +10,7 @@ In 2023, we saw LLMs near expert-level performance on the MMLU (massive multitas
 
 Of course, the MMLU has its blindspots. But what’s clearly visible is the rapid development of generative AI in the last few years, with the release of Open AI’s GPT family of models, Google’s PaLM and Gemini, as well as open source alternatives like LLaMa and Mixtral. With these recent performance improvements, we believe that LLMs will now be able to automate large swathes of knowledge work that AI previously couldn’t touch.
 
-![](https://foundationcapital.com/wp-content/uploads/2024/02/Inference_ChartA_v1-1024x603.png)
+![Chart titled Rise of Superhuman Generative AI: average MMLU scores from 2019 to 2024 climb from GPT-2 (about 32), past the non-expert human baseline of 34.5%, through UnifiedQA, GPT-3, Gopher, Chinchilla, PaLM, Flan-PaLM and GPT-4 to Gemini Ultra (about 90), approaching the expert-level human performance line of 90%](./images/2024-02-22-why-2024-will-be-the-year-of-inference/rise-of-superhuman-generative-ai.png)
 
 The performance of pre-trained models signals the training era is over. We believe 2024 will be the year of LLM inference — developers taking models and putting them into production for real world applications.
 
