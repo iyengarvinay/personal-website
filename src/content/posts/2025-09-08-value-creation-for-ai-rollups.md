@@ -8,7 +8,7 @@ originalSlug: "2025/09/08/value-creation-for-ai-rollups"
 
 One of the most common topics I’m asked about is how AI-enabled rollups create value post-acquisition. This post attempts to discuss the most common tactics, examples of how they work, and rough success heuristics for founders building in the space.
 
-As a reminder, [AI-enabled rollups](https://www.vinayiyengar.com/2025/01/17/the-dawn-of-ai-rollups/) are quickly becoming the rage among the most talented technologists and founders. The idea is simple in theory: rollup SMBs and services businesses with a combination of equity and debt and leverage AI to drive margin expansion and growth. But very few companies have actually managed to achieve success in practice. Having studied hundreds of these, both the successes and failures, I wanted to share some of the best practices I’ve picked up along the way.
+As a reminder, [AI-enabled rollups](/posts/2025-01-17-the-dawn-of-ai-rollups/) are quickly becoming the rage among the most talented technologists and founders. The idea is simple in theory: rollup SMBs and services businesses with a combination of equity and debt and leverage AI to drive margin expansion and growth. But very few companies have actually managed to achieve success in practice. Having studied hundreds of these, both the successes and failures, I wanted to share some of the best practices I’ve picked up along the way.
 
 Broadly speaking, there are 3 core levers for value creation in AI rollups (and a surprise 4th one), discussed below, from simplest to most complex:
 

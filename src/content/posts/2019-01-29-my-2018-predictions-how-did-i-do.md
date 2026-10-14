@@ -6,7 +6,7 @@ description: "At the beginning of 2018, I wrote a post outlining a few of my pre
 originalSlug: "2019/01/29/my-2018-predictions-how-did-i-do"
 ---
 
-At the beginning of 2018, I wrote a post outlining a [few of my predictions](http://www.vinayiyengar.com/2018/01/04/predictions-for-the-venture-world-in-2018-bursting-bubbles/) for the venture world in 2018. Here’s a quick review of what they were and how things turned out.
+At the beginning of 2018, I wrote a post outlining a [few of my predictions](/posts/2018-01-04-predictions-for-the-venture-world-in-2018-bursting-bubbles/) for the venture world in 2018. Here’s a quick review of what they were and how things turned out.
 
 **The prediction?** Valuations will begin to come back down to earth.
 
