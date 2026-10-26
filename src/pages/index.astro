@@ -7,7 +7,7 @@ import { getCollection } from 'astro:content';
 const allPosts = await getCollection('posts', ({ data }) => !data.draft);
 const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
-<BaseLayout video={{ src: '/preview.mp4', width: 600, height: 600 }}>
+<BaseLayout video={{ src: '/preview.mp4', width: 800, height: 800 }}>
   <div class="layout">
     <div class="posts">
       {posts.map((post) => (
